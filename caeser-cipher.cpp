@@ -59,21 +59,22 @@ int main(){
     cin >> answer;
 
     if(answer != ""){
-        if(answer != "encode" || answer != "decode"){
+        if(answer != "encode" && answer != "decode"){
             cout << "Sorry! I didn't quite catch that! Please answer either 'encode' or 'decode'" << endl;
             cout << "Would you like to encode or decode a message?" << endl;
             cin >> answer;
         }
         cout << "What message would you like to " << answer << endl;
-        getline(cin, message);
+        cin >> message; //I tried using getline() so it didn't ignore whitespace but it didn't work
         if(answer == "encode"){
             cout << "What encryption key would you like to use?" << endl;
-            getline(cin, key);
+            cin >> key;
             cout << "encoded message: " << encode(message, key) << endl;
         }
         if(answer == "decode"){
             cout << "What decryption key would you like to use?" << endl;
-            getline(cin, key);
+            cin >> key;
+
             cout << "decoded message: " << decode(message, key) << endl;
         }
         }
