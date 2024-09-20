@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+
 using namespace std;
 
 const int maxchar = 'z';
@@ -63,15 +65,15 @@ int main(){
             cin >> answer;
         }
         cout << "What message would you like to " << answer << endl;
-        cin >> message;
+        getline(cin, message);
         if(answer == "encode"){
             cout << "What encryption key would you like to use?" << endl;
-            cin >> key;
+            getline(cin, key);
             cout << "encoded message: " << encode(message, key) << endl;
         }
         if(answer == "decode"){
             cout << "What decryption key would you like to use?" << endl;
-            cin >> key;
+            getline(cin, key);
             cout << "decoded message: " << decode(message, key) << endl;
         }
         }
